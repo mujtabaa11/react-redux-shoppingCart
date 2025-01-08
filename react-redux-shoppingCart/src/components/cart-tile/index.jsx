@@ -1,8 +1,11 @@
-export default function CartTile({cartItem}) {
+import { useDispatch } from "react-redux";
+import { removeFromCart } from "../../store/slices/cart-slice";
 
-    function handleRemoveFromCart() {
-        console.log(removed)
-        }
+export default function CartTile({ cartItem }) {
+  const dispatch = useDispatch();
+  function handleRemoveFromCart() {
+    dispatch(removeFromCart(cartItem.id));
+  }
 
   return (
     <>
